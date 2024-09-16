@@ -3,7 +3,7 @@ name: Build, Push Docker image using deployment tag, Sync ArgoCD application
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
