@@ -1,5 +1,5 @@
 # Usa un'immagine Python ufficiale come base
-FROM python:3.9-slim as python-base
+FROM --platform=linux/amd64 python:3.11-slim as python-base
 
 # Poetry configuration
 ENV POETRY_VERSION=1.4.2
