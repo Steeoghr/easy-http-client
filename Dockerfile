@@ -33,4 +33,4 @@ COPY . .
 ENV PYTHONUNBUFFERED=1
 
 # Esegui lo script quando il container viene avviato
-CMD ["python", "main.py"]
+CMD ["python", "__main__.py"]

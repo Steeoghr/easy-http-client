@@ -2,31 +2,6 @@ import requests
 from lib.common.http.Client import HttpRequestType
 from bs4 import BeautifulSoup
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
-from lib.common.utility.logging import log_if_not_null
-
-
-class HttpRequest:
-    url: str
-    type: HttpRequestType
-    params: dict
-    body: dict
-    headers: dict
-    proxies: dict
-
-    def __init__(self, url, type, params = None, body = None, headers = None, proxies = None):
-        self.url = url
-        self.type = type
-        self.params = params
-        self.body = body
-        self.headers = headers
-        self.proxies = proxies
-
-    def __str__(self):
-        print(f"[{self.type}] {self.url}")
-        log_if_not_null(self.params, f"Params:\n{self.params}")
-        log_if_not_null(self.body, f"Body:\n{self.body}")
-        log_if_not_null(self.headers, f"Headers:\n{self.headers}")
-        log_if_not_null(self.proxies, f"Proxies:\n{self.proxies}")
 
 @retry(
     stop=stop_after_attempt(10),

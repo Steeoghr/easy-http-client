@@ -41,3 +41,8 @@ def raise_if_null(member: Any):
 def raise_if_null_or_empty(member: str):
     if member is None or member == "":
         raise_member(member)
+
+
+def raise_error(error: str):
+    print(error)
+    raise ValueError(error)
